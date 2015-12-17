@@ -36,6 +36,17 @@
 
     UndoRedo.prototype.constructor = UndoRedo;
 
+
+    /**
+     * Raccourci clavier pour annuler
+     * @type {String} touche ou combinaison de touches ou null pour pas de raccourci
+     */
+    UndoRedo.prototype.keyShortCutUndo = "ctrl+z";
+    /**
+     * Raccourci clavier pour refaire
+     * @type {String} touche ou combinaison de touches ou null pour pas de raccourci
+     */
+    UndoRedo.prototype.keyShortCutRedo = "ctrl+y";
     /**
      * Champ annuler
      * @type argument JSYG
@@ -213,7 +224,8 @@
     UndoRedo.prototype.enable = function(opt) {
 
         var undo = this.undo.bind(this),
-        redo = this.redo.bind(this);
+        redo = this.redo.bind(this),
+        $doc = $(document);
 
         this.disable();
 
@@ -224,10 +236,8 @@
         this.fieldUndo && new JSYG(this.fieldUndo).on('click',undo).addClass(this.classInactive);
         this.fieldRedo && new JSYG(this.fieldRedo).on('click',redo);
 
-
-        $(document)
-            .on("keydown",null,"ctrl+z",undo)
-            .on("keydown",null,"ctrl+y",redo);
+        if (this.keyShortCutUndo) $doc.on("keydown",null,this.keyShortCutUndo,undo);
+        if (this.keyShortCutReddo) $doc.on("keydown",null,this.keyShortCutRedo,redo);
 
         this.disable = function() {
 
@@ -239,10 +249,9 @@
             this.fieldRedo && $(this.fieldRedo).off('click',redo).removeClass(this.classInactive);
 
             this.enabled = false;
-
-            $(document)
-            .off("keydown",null,"ctrl+z",undo)
-            .off("keydown",null,"ctrl+y",redo);
+            
+            if (this.keyShortCutUndo) $doc.off("keydown",null,this.keyShortCutUndo,undo);
+            if (this.keyShortCutReddo) $doc.off("keydown",null,this.keyShortCutRedo,redo);
 
             return this;
         };
