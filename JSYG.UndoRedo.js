@@ -272,8 +272,8 @@
         
         var $doc = $(document);
         
-        if (this.keyShortCutUndo) $doc.off("keydown",null,this.keyShortCutUndo,this.undo);
-        if (this.keyShortCutRedo) $doc.off("keydown",null,this.keyShortCutRedo,this.redo);
+        if (this.keyShortCutUndo) $doc.off("keydown",this.undo);
+        if (this.keyShortCutRedo) $doc.off("keydown",this.redo);
         
         return this;
     };
