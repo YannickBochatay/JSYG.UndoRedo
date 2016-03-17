@@ -3,7 +3,7 @@
 
 (function(root,factory) {
 
-    if (typeof define != "undefined" && define.amd) define("jsyg-undoredo",["jquery","jsyg-stdconstruct","jquery-hotkeys"],factory);
+    if (typeof define != "undefined" && define.amd) define("jsyg-undoredo",["jquery","jsyg-stdconstruct","jQuery.Hotkeys"],factory);
     else if (typeof jQuery == "undefined") throw new Error("jQuery is needed");
     else if (typeof JSYG != "undefined" && JSYG.StdConstruct) factory(jQuery,JSYG.StdConstruct);
     else if (typeof StdConstruct != "undefined") root.UndoRedo = factory(jQuery,StdConstruct);
