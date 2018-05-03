@@ -1,6 +1,6 @@
 {
   "name": "jsyg-undoredo",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "DOM Undo/Redo plugin for JSYG framework",
   "main": "JSYG.UndoRedo.js",
   "directories": {
@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/YannickBochatay/JSYG.UndoRedo#readme",
   "dependencies": {
-    "jquery": "^2.2.3",
+    "jquery": "^3.3.1",
     "jquery.hotkeys": "^0.1.0",
-    "jsyg-stdconstruct": ""
+    "jsyg-stdconstruct": "^1.0.0"
   }
 }
