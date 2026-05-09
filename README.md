@@ -1,6 +1,8 @@
 # JSYG.UndoRedo
 DOM Undo/Redo plugin for JSYG framework (or standalone with jQuery)
 
+## ⚠️ Deprecated. Use [@jsyg/undoredo](https://github.com/YannickBochatay/jsyg-monorepo/tree/main/packages/undoredo) instead.
+
 ### Demo
 [http://yannickbochatay.github.io/JSYG.UndoRedo/](http://yannickbochatay.github.io/JSYG.UndoRedo/)
 
